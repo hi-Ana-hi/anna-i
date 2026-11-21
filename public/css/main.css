@@ -78,3 +78,19 @@ footer {
   font-size: 0.75rem;
   color: var(--muted);
 }
+
+.lang {
+  position: absolute;
+  top: 1.5rem;
+  right: clamp(1rem, 8vw, 8rem);
+}
+
+.lang a {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+}
+
+.lang a:hover { color: var(--text); }
