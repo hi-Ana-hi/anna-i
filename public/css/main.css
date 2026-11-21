@@ -1,0 +1,80 @@
+:root {
+  --bg: #0b0a09;
+  --text: #efe9e1;
+  --muted: #8a8279;
+  --accent: #b3261e;
+  --display: 'Bodoni Moda', Georgia, serif;
+  --body: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-weight: 300;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10vh clamp(1rem, 8vw, 8rem);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(3.5rem, 19vw, 11rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+h1 span {
+  display: block;
+  line-height: 1.1;
+  margin-top: 0.15em;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.45em;
+  color: var(--muted);
+}
+
+.pronounce {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.pronounce em { color: var(--accent); font-style: normal; }
+
+.soon { margin-top: 4rem; color: var(--muted); }
+
+.contact {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  align-self: flex-start;
+}
+
+.contact:hover { color: var(--accent); }
+
+footer {
+  padding: 2rem clamp(1rem, 8vw, 8rem);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
