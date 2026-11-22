@@ -373,7 +373,7 @@ footer {
 
 .about-body {
   max-width: 60rem;
-  padding: 1rem clamp(1rem, 8vw, 8rem) 4rem;
+  padding: 1rem clamp(1rem, 8vw, 8rem) 0; /* videoen under tar over avstanden */
   box-sizing: content-box;
 }
 
@@ -449,4 +449,95 @@ footer {
   }
 
   .hero-text { padding: 3.5rem clamp(1rem, 8vw, 8rem) 3rem; }
+}
+
+/* ---------- Avslutningsvideo på Om-siden ---------- */
+/* «I dag» står på linje med seksjonene over, med videoen bak */
+.about-outro {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(80vh + 10rem);
+  min-height: calc(80svh + 10rem);
+  display: flex;
+  align-items: flex-start; /* teksten følger rett etter seksjonen over */
+  padding-top: 3.5rem;     /* samme avstand som mellom de andre seksjonene */
+}
+
+/* Samme bredde og marger som teksten over */
+.outro-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 60rem;
+  padding: 0 clamp(1rem, 8vw, 8rem);
+  box-sizing: content-box;
+}
+
+.outro-inner .about-section { margin-top: 0; }
+
+.outro-video {
+  position: absolute;
+  top: 10rem; /* starter litt under «I dag», så ansiktet ikke dekkes av teksten */
+  right: 0;
+  width: 60%; /* videoen til høyre, så dansen synes ved siden av teksten */
+  height: calc(100% - 10rem);
+  object-fit: cover;
+}
+
+/* Myk overgang fra svart: til venstre bak teksten, og øverst/nederst */
+.about-outro::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--bg) 40%, rgba(11, 10, 9, 0.5) 55%, rgba(11, 10, 9, 0) 70%),
+    linear-gradient(180deg, var(--bg) 10rem, rgba(11, 10, 9, 0) calc(10rem + 15%)),
+    linear-gradient(0deg, var(--bg) 0%, rgba(11, 10, 9, 0) 12%);
+}
+
+.outro-toggle {
+  position: absolute;
+  z-index: 1;
+  right: clamp(1rem, 8vw, 8rem);
+  bottom: 2rem;
+  background: none;
+  border: 1px solid var(--muted);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0.6em 1em;
+  cursor: pointer;
+}
+
+.outro-toggle:hover,
+.outro-toggle:focus-visible { color: var(--text); border-color: var(--text); }
+
+/* Smal skjerm: videoen i full bredde øverst, teksten under */
+@media (max-width: 900px) {
+  .about-outro {
+    display: block;
+    min-height: 0;
+    padding: 2.5rem 0 0;
+  }
+
+  .outro-video {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .about-outro::after { display: none; }
+
+  .outro-inner { padding: 0.5rem clamp(1rem, 8vw, 8rem) 3rem; }
+
+  /* Pause-knappen nede til høyre i videoen */
+  .outro-toggle {
+    top: calc(56.25vw - 2.75rem);
+    bottom: auto;
+  }
 }

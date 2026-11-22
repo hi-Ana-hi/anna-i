@@ -1,4 +1,5 @@
 <%- include('partials/head') %>
+  <script src="/js/outro-video.js" defer></script>
 </head>
 <body>
   <%- include('partials/header') %>
@@ -14,7 +15,8 @@
     </div>
 
     <div class="about-body">
-<% c.sections.forEach(function (section) { %>
+<% /* Den siste seksjonen («I dag») vises oppå videoen nederst */ %>
+<% c.sections.slice(0, -1).forEach(function (section) { %>
     <section class="about-section">
       <h2><%= section.heading %></h2>
       <div>
@@ -24,6 +26,27 @@
       </div>
     </section>
 <% }) %>
+    </div>
+
+    <!-- Avslutning: rolig svart-hvitt-video nederst på siden -->
+    <div class="about-outro">
+      <video class="outro-video" muted loop playsinline preload="none"
+             poster="/video/tarantos-bw-poster.jpg" data-src="/video/tarantos-bw.mp4"
+             aria-hidden="true" tabindex="-1"></video>
+<% const last = c.sections[c.sections.length - 1]; %>
+      <div class="outro-inner">
+        <section class="about-section">
+          <h2><%= last.heading %></h2>
+          <div>
+<% last.paragraphs.forEach(function (p) { %>
+            <p><%- p %></p>
+<% }) %>
+          </div>
+        </section>
+      </div>
+      <button class="outro-toggle" type="button" hidden
+              data-label-pause="<%= t.videoPause %>"
+              data-label-play="<%= t.videoPlay %>"><%= t.videoPause %></button>
     </div>
   </main>
   <footer>© <%= year %> Anahí Sucarrat Johnsen · Oslo</footer>
