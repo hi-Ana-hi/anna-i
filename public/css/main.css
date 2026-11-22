@@ -420,3 +420,33 @@ footer {
   margin-top: 1.5rem;
   color: var(--text);
 }
+
+
+/* ---------- Forsiden på mobil ---------- */
+/* Videoen vises i full bredde uten beskjæring, og teksten står under den */
+@media (max-width: 760px) {
+  .hero {
+    display: block;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .hero-video {
+    position: static;
+    display: block;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin-top: 4.5rem; /* plass til menyen */
+  }
+
+  .hero-overlay { display: none; }
+
+  /* Pause-knappen rett under videoen, til høyre */
+  .video-toggle {
+    top: calc(4.5rem + 56.25vw + 0.75rem);
+    bottom: auto;
+    right: clamp(1rem, 8vw, 8rem);
+  }
+
+  .hero-text { padding: 3.5rem clamp(1rem, 8vw, 8rem) 3rem; }
+}

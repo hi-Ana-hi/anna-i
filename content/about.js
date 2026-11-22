@@ -43,7 +43,7 @@ module.exports = {
       {
         heading: 'I dag',
         paragraphs: [
-          `Anahí grunnla Artesana Escuela Flamenca i Chile allerede i 2009, og er i dag medgründer av <a href="${artesana}">Artesana Oslo Flamencoskole</a> (2023) og medeier av <a href="${studioT}">Studio T</a> på Vulkan i Oslo. Hun har virket profesjonelt som danser, koreograf og pedagog i Chile og Norge, opptrådt på scener i begge land og koreografert forestillinger med opptil 45 dansere fordelt på flere grupper og nivåer. I 2023 var hun gjestepedagog i TV 2s «Skal vi danse».`,
+          `Anahí grunnla Artesana Escuela Flamenca i Chile allerede i 2009, og er i dag medgründer av <a href="${artesana}" target="_blank" rel="noopener">Artesana Oslo Flamencoskole</a> (2023) og medeier av <a href="${studioT}" target="_blank" rel="noopener">Studio T</a> på Vulkan i Oslo. Hun har virket profesjonelt som danser, koreograf og pedagog i Chile og Norge, opptrådt på scener i begge land og koreografert forestillinger med opptil 45 dansere fordelt på flere grupper og nivåer. I 2023 var hun gjestepedagog i TV 2s «Skal vi danse».`,
         ],
       },
     ],
@@ -78,7 +78,7 @@ module.exports = {
       {
         heading: 'Today',
         paragraphs: [
-          `Anahí founded Artesana Escuela Flamenca in Chile as early as 2009. Today she is co-founder of <a href="${artesana}">Artesana Oslo Flamenco School</a> (2023) and co-owner of <a href="${studioT}">Studio T</a> at Vulkan in Oslo. She has worked professionally as a dancer, choreographer and teacher in Chile and Norway, performed on stages in both countries and choreographed productions with up to 45 dancers across several groups and levels. In 2023 she was a guest teacher on TV 2’s “Skal vi danse”, Norway’s version of Dancing with the Stars.`,
+          `Anahí founded Artesana Escuela Flamenca in Chile as early as 2009. Today she is co-founder of <a href="${artesana}" target="_blank" rel="noopener">Artesana Oslo Flamenco School</a> (2023) and co-owner of <a href="${studioT}" target="_blank" rel="noopener">Studio T</a> at Vulkan in Oslo. She has worked professionally as a dancer, choreographer and teacher in Chile and Norway, performed on stages in both countries and choreographed productions with up to 45 dancers across several groups and levels. In 2023 she was a guest teacher on TV 2’s “Skal vi danse”, Norway’s version of Dancing with the Stars.`,
         ],
       },
     ],
@@ -113,7 +113,7 @@ module.exports = {
       {
         heading: 'Hoy',
         paragraphs: [
-          `Anahí fundó Artesana Escuela Flamenca en Chile ya en 2009. Hoy es cofundadora de <a href="${artesana}">Artesana Oslo Flamencoskole</a> (2023) y copropietaria de <a href="${studioT}">Studio T</a>, en Vulkan, Oslo. Ha trabajado profesionalmente como bailaora, coreógrafa y pedagoga en Chile y Noruega, ha actuado en escenarios de ambos países y ha coreografiado espectáculos con hasta 45 bailarines repartidos en varios grupos y niveles. En 2023 fue profesora invitada en «Skal vi danse» de TV 2, la versión noruega de Bailando con las estrellas.`,
+          `Anahí fundó Artesana Escuela Flamenca en Chile ya en 2009. Hoy es cofundadora de <a href="${artesana}" target="_blank" rel="noopener">Artesana Oslo Flamencoskole</a> (2023) y copropietaria de <a href="${studioT}" target="_blank" rel="noopener">Studio T</a>, en Vulkan, Oslo. Ha trabajado profesionalmente como bailaora, coreógrafa y pedagoga en Chile y Noruega, ha actuado en escenarios de ambos países y ha coreografiado espectáculos con hasta 45 bailarines repartidos en varios grupos y niveles. En 2023 fue profesora invitada en «Skal vi danse» de TV 2, la versión noruega de Bailando con las estrellas.`,
         ],
       },
     ],

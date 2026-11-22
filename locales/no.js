@@ -6,7 +6,7 @@ module.exports = {
   description:
     'Anahí («Anai») Sucarrat Johnsen er flamencodanser, koreograf og pedagog med over 20 års erfaring fra Chile, Spania og Norge. Medgründer av Artesana Oslo Flamencoskole.',
   pronounce: 'uttales',
-  tagline: 'Flamenco i møte med samtidsdans',
+  tagline: 'Røtter i flamenco, samtiden i blikket',
   roles: ['Danser', 'Koreograf', 'Visuell artist', 'Pedagog'],
   soon: 'Nettsiden er under arbeid…',
   // Sidene i menyen: adresse (slug) og navn
