@@ -8,6 +8,9 @@ module.exports = {
   pronounce: 'se pronuncia',
   tagline: 'Raíces flamencas, visión contemporánea',
   roles: ['Bailaora', 'Coreógrafa', 'Artista visual', 'Pedagoga'],
+  // Kort intro på forsiden, med lenke til Om-siden
+  intro: 'De la escena rave en Noruega a los estudios de flamenco de Sevilla. Anahí es bailaora, coreógrafa, artista visual y pedagoga noruego-chilena, con más de 20 años en el flamenco, un arte que honra por su tradición y explora con mirada contemporánea.',
+  introMore: 'Más sobre Anahí',
   soon: 'Página web en construcción…',
   // Sidene i menyen: adresse (slug) og navn
   pages: {

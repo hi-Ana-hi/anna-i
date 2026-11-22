@@ -21,10 +21,19 @@
         <li><%= role %></li>
 <% }) %>
       </ul>
-      <p class="soon"><%= t.soon %></p>
-      <a class="contact" href="mailto:johnsenanahi@gmail.com">johnsenanahi@gmail.com</a>
     </div>
   </main>
+
+  <section class="home-intro">
+    <p><%= t.intro %></p>
+    <a class="more-link" href="<%= url(t.lang, 'about') %>"><%= t.introMore %> <span aria-hidden="true">→</span></a>
+  </section>
+
+  <section class="home-contact">
+    <p class="soon"><%= t.soon %></p>
+    <a class="contact" href="mailto:johnsenanahi@gmail.com">johnsenanahi@gmail.com</a>
+  </section>
+
   <footer>© <%= year %> Anahí Sucarrat Johnsen · Oslo</footer>
 </body>
 </html>

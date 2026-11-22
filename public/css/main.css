@@ -427,6 +427,7 @@ footer {
 @media (max-width: 760px) {
   .hero {
     display: block;
+    flex: none; /* ikke strekk området for å fylle skjermen */
     min-height: 0;
     padding: 0;
   }
@@ -540,4 +541,53 @@ footer {
     top: calc(56.25vw - 2.75rem);
     bottom: auto;
   }
+}
+
+/* ---------- Kort intro på forsiden ---------- */
+/* Sentrert, som en undertekst i Bodoni kursiv */
+.home-intro {
+  padding: 7rem clamp(1rem, 8vw, 8rem) 4rem;
+  text-align: center;
+}
+
+.home-intro p {
+  max-width: 56rem;
+  margin: 0 auto;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* «Under arbeid» og e-post nederst, sentrert */
+.home-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem clamp(1rem, 8vw, 8rem) 3rem;
+  text-align: center;
+}
+
+.home-contact .soon { margin-top: 0; }
+.home-contact .contact { align-self: center; }
+
+/* «Mer om Anahí →» */
+.more-link {
+  display: inline-block;
+  margin-top: 1.75rem;
+  color: var(--text);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--pink);
+}
+
+.more-link:hover { color: var(--pink); }
+
+@media (max-width: 760px) {
+  .home-intro { padding: 0.5rem clamp(1rem, 8vw, 8rem) 3rem; }
 }

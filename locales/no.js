@@ -8,6 +8,9 @@ module.exports = {
   pronounce: 'uttales',
   tagline: 'Røtter i flamenco, samtiden i blikket',
   roles: ['Danser', 'Koreograf', 'Visuell artist', 'Pedagog'],
+  // Kort intro på forsiden, med lenke til Om-siden
+  intro: 'Fra ravescenen i Norge til flamencostudioene i Sevilla. Anahí er en norsk-chilensk danser, koreograf, visuell artist og pedagog med over 20 år i flamenco – en kunstform hun ærer for tradisjonen og utforsker med blikk for samtiden.',
+  introMore: 'Mer om Anahí',
   soon: 'Nettsiden er under arbeid…',
   // Sidene i menyen: adresse (slug) og navn
   pages: {
