@@ -106,7 +106,7 @@ module.exports = {
       {
         heading: 'Danza y cine',
         paragraphs: [
-          'Con estudios de Comunicación Audiovisual en Duoc UC, Chile, Anahí siempre ha trabajado en el cruce entre la danza y lo visual. Ha dirigido y montado documentales, así como videos musicales y de danza, y la mirada cinematográfica es hoy parte integral de su forma de pensar la coreografía, no un proyecto paralelo.',
+          'Con un Bachelor en Comunicación Audiovisual de Duoc UC, Chile, Anahí siempre ha trabajado en el cruce entre la danza y lo visual. Ha dirigido y montado documentales, así como videos musicales y de danza, y la mirada cinematográfica es hoy parte integral de su forma de pensar la coreografía, no un proyecto paralelo.',
         ],
       },
       {
