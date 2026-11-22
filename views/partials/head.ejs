@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="<%= t.lang %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= page === 'home' ? t.title : t.pages[page].label + ' – Anahí Sucarrat Johnsen' %></title>
+  <meta name="description" content="<%= t.description %>">
+  <link rel="canonical" href="<%= siteUrl + url(t.lang, page) %>">
+<% Object.values(locales).forEach(function (l) { %>
+  <link rel="alternate" hreflang="<%= l.lang %>" href="<%= siteUrl + url(l.lang, page) %>">
+<% }) %>
+  <link rel="alternate" hreflang="x-default" href="<%= siteUrl + url('en', page) %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400&family=Josefin+Sans:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/menu.js" defer></script>

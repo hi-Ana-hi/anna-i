@@ -1,0 +1,31 @@
+<%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="about">
+    <div class="about-hero">
+      <img class="about-hero-img" src="<%= c.photo.src %>" srcset="<%= c.photo.srcset %>" sizes="100vw"
+           width="<%= c.photo.width %>" height="<%= c.photo.height %>" alt="<%= c.photo.alt %>">
+      <p class="about-hero-credit"><%= c.photo.credit %></p>
+      <div class="about-hero-text">
+        <h1><%= t.pages[page].label %></h1>
+        <p class="lead"><%- c.lead %></p>
+      </div>
+    </div>
+
+    <div class="about-body">
+<% c.sections.forEach(function (section) { %>
+    <section class="about-section">
+      <h2><%= section.heading %></h2>
+      <div>
+<% section.paragraphs.forEach(function (p) { %>
+        <p><%- p %></p>
+<% }) %>
+      </div>
+    </section>
+<% }) %>
+    </div>
+  </main>
+  <footer>© <%= year %> Anahí Sucarrat Johnsen · Oslo</footer>
+</body>
+</html>

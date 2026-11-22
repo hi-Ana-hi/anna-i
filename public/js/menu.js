@@ -1,0 +1,29 @@
+// Mobilmeny: «Meny»-knappen åpner og lukker menyen over hele skjermen.
+// Uten JavaScript vises menyen bare som en vanlig liste (knappen forblir skjult).
+(function () {
+  const header = document.querySelector('.site-header');
+  const button = document.querySelector('.menu-toggle');
+  if (!header || !button) return;
+
+  header.classList.add('has-js');
+  button.hidden = false;
+
+  function setOpen(open) {
+    header.classList.toggle('menu-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    button.textContent = open ? button.dataset.labelClose : button.dataset.labelOpen;
+    document.body.style.overflow = open ? 'hidden' : ''; // ikke rull siden bak menyen
+  }
+
+  button.addEventListener('click', function () {
+    setOpen(!header.classList.contains('menu-open'));
+  });
+
+  // Esc lukker menyen
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && header.classList.contains('menu-open')) {
+      setOpen(false);
+      button.focus();
+    }
+  });
+})();

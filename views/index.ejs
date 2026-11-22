@@ -1,29 +1,29 @@
-<!doctype html>
-<html lang="<%= t.lang %>">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><%= t.title %></title>
-  <meta name="description" content="<%= t.description %>">
-  <link rel="canonical" href="<%= siteUrl + t.path %>">
-  <link rel="alternate" hreflang="no" href="<%= siteUrl + locales.no.path %>">
-  <link rel="alternate" hreflang="en" href="<%= siteUrl + locales.en.path %>">
-  <link rel="alternate" hreflang="x-default" href="<%= siteUrl + locales.no.path %>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
+<%- include('partials/head') %>
+  <script src="/js/hero-video.js" defer></script>
 </head>
 <body>
-  <nav class="lang">
-    <a href="<%= other.path %>" hreflang="<%= other.lang %>" lang="<%= other.lang %>"><%= t.switchLabel %></a>
-  </nav>
+  <%- include('partials/header') %>
   <main class="hero">
-    <p class="eyebrow"><%= t.eyebrow %></p>
-    <h1>Anahí <span>Sucarrat Johnsen</span></h1>
-    <p class="pronounce"><%= t.pronounce %> <em>«Anai»</em></p>
-    <p class="soon"><%= t.soon %></p>
-    <a class="contact" href="mailto:post@anna-i.no">post@anna-i.no</a>
+    <video class="hero-video" muted loop playsinline preload="none"
+           poster="/video/solea1tere-poster.jpg" data-src="/video/solea1tere.mp4"
+           aria-hidden="true" tabindex="-1"></video>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <button class="video-toggle" type="button" hidden
+            data-label-pause="<%= t.videoPause %>"
+            data-label-play="<%= t.videoPlay %>"><%= t.videoPause %></button>
+
+    <div class="hero-text">
+      <h1>Anahí <span>Sucarrat Johnsen</span></h1>
+      <p class="pronounce">(<%= t.pronounce %> <em>anna-i <span aria-hidden="true">/</span> anaí</em>)</p>
+      <p class="tagline"><%= t.tagline %></p>
+      <ul class="roles">
+<% t.roles.forEach(function (role) { %>
+        <li><%= role %></li>
+<% }) %>
+      </ul>
+      <p class="soon"><%= t.soon %></p>
+      <a class="contact" href="mailto:johnsenanahi@gmail.com">johnsenanahi@gmail.com</a>
+    </div>
   </main>
   <footer>© <%= year %> Anahí Sucarrat Johnsen · Oslo</footer>
 </body>

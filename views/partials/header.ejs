@@ -1,0 +1,20 @@
+<header class="site-header">
+  <button class="menu-toggle" type="button" hidden aria-expanded="false" aria-controls="main-nav"
+          data-label-open="<%= t.menuOpen %>" data-label-close="<%= t.menuClose %>"><%= t.menuOpen %></button>
+
+  <nav id="main-nav" class="main-nav" aria-label="<%= t.mainNavLabel %>">
+    <ul>
+<% Object.keys(t.pages).forEach(function (key) { %>
+      <li><a href="<%= url(t.lang, key) %>" <%- key === page ? 'aria-current="page"' : '' %>><%= t.pages[key].label %></a></li>
+<% }) %>
+    </ul>
+  </nav>
+
+  <nav class="lang" aria-label="<%= t.langNavLabel %>">
+<% Object.values(locales).forEach(function (l, i) { %>
+    <%- i ? '<span aria-hidden="true">·</span>' : '' %>
+    <a href="<%= url(l.lang, page) %>" hreflang="<%= l.lang %>" lang="<%= l.lang %>" title="<%= l.langName %>"
+       <%- l.lang === t.lang ? 'aria-current="page"' : '' %>><%= l.lang.toUpperCase() %></a>
+<% }) %>
+  </nav>
+</header>
