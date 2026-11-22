@@ -6,10 +6,11 @@ const studioT = 'https://studio-texnaes.no/';
 
 // Bildet øverst på siden (ligger i public/img/, i to størrelser)
 const heroPhoto = {
-  src: '/img/anahi-brvjo-1600.jpg',
-  srcset: '/img/anahi-brvjo-800.jpg 800w, /img/anahi-brvjo-1600.jpg 1600w',
+  // Beskåret versjon (ansikt, hals og skuldre). Original: ~/Desktop/nettside-bilder/Artistic-anahi_Brvjo.JPG
+  src: '/img/anahi-brvjo-crop-1600.jpg',
+  srcset: '/img/anahi-brvjo-crop-800.jpg 800w, /img/anahi-brvjo-crop-1600.jpg 1600w',
   width: 1600,
-  height: 1064,
+  height: 938,
 };
 
 module.exports = {
