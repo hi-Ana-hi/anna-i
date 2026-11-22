@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Rundt ikon: svart sirkel med fire rosa ruter (❖) -->
+  <circle cx="50" cy="50" r="50" fill="#0b0a09"/>
+  <g fill="#e8a3b0">
+    <path d="M50 19 64 33 50 47 36 33Z"/>
+    <path d="M67 36 81 50 67 64 53 50Z"/>
+    <path d="M50 53 64 67 50 81 36 67Z"/>
+    <path d="M33 36 47 50 33 64 19 50Z"/>
+  </g>
+</svg>
