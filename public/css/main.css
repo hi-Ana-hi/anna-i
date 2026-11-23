@@ -591,3 +591,158 @@ footer {
 @media (max-width: 760px) {
   .home-intro { padding: 0.5rem clamp(1rem, 8vw, 8rem) 3rem; }
 }
+
+/* ---------- Kontakt-siden ---------- */
+/* Bruker samme bildeoppsett som Om-siden (.about-hero), med litt smalere bilde */
+.contact-hero .about-hero-img { width: 72%; }
+
+.contact-hero::after {
+  background:
+    linear-gradient(90deg, var(--bg) 28%, rgba(11, 10, 9, 0) 45%),
+    linear-gradient(0deg, var(--bg) 0%, rgba(11, 10, 9, 0) 20%);
+}
+
+/* Kort linje i tynne store bokstaver, som ingressen på Om-siden */
+.contact-lead {
+  margin-top: 1.5rem;
+  max-width: 28rem;
+  font-family: 'Josefin Sans', var(--body);
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  line-height: 2;
+}
+
+
+.contact-main .about-body { padding-bottom: 5rem; }
+.contact-classes { margin-top: 3.5rem; }
+
+@media (max-width: 900px) {
+  .contact-hero .about-hero-img { width: 100%; }
+}
+
+/* ---------- Kontaktskjema ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 34rem;
+}
+
+.contact-form label {
+  margin-top: 1.25rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.contact-form label:first-of-type { margin-top: 0; }
+
+/* Enkle felt: bare en strek under, som på et ark */
+.contact-form input,
+.contact-form textarea {
+  margin-top: 0.4rem;
+  padding: 0.6rem 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(239, 233, 225, 0.25);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.contact-form textarea { resize: vertical; min-height: 8rem; }
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--pink);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  margin-top: 2rem;
+  padding: 0.8em 2.2em;
+  background: none;
+  border: 1px solid var(--pink);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+
+.contact-form button:hover,
+.contact-form button:focus-visible { background: var(--pink); color: var(--bg); }
+.contact-form button:disabled { opacity: 0.6; cursor: wait; }
+
+/* Fellefeltet for roboter: helt skjult for mennesker */
+.cf-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.form-status {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.2rem;
+  border-left: 2px solid var(--pink);
+  background: rgba(239, 233, 225, 0.04);
+}
+
+.contact-form .form-status { margin: 1.25rem 0 0; }
+.form-status-error { border-left-color: var(--accent); }
+.form-status a,
+.contact-direct a { color: var(--text); border-bottom: 1px solid var(--pink); text-decoration: none; }
+
+.contact-direct {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Takk-pop-up: liten, offwhite, midt på skjermen */
+.thanks-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;          /* sentrerer boksen både vannrett og loddrett */
+  width: min(21rem, calc(100vw - 2rem));
+  height: fit-content;
+  padding: 2rem 1.75rem 1.75rem;
+  background: var(--text);
+  color: var(--bg);
+  border: 0;
+  text-align: center;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+}
+
+.thanks-dialog::backdrop { background: rgba(11, 10, 9, 0.75); }
+
+.thanks-dialog h2 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.75rem;
+}
+
+.thanks-dialog p {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(11, 10, 9, 0.8);
+}
+
+.thanks-close {
+  margin-top: 1.5rem;
+  padding: 0.65em 1.8em;
+  background: none;
+  border: 1px solid var(--bg);
+  color: var(--bg);
+  font: inherit;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+
+.thanks-close:hover,
+.thanks-close:focus-visible { background: var(--bg); color: var(--text); }
