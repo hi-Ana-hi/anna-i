@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const nodemailer = require('nodemailer');
 
 const locales = {
   en: require('./locales/en'),
@@ -63,15 +62,9 @@ app.get('/es', (req, res) => res.redirect(301, '/es/'));
 app.get(['/en', '/en/'], (req, res) => res.redirect(301, '/'));
 
 // ---------- Kontaktskjema ----------
-// Meldinger sendes til Anahís Gmail via Gmail selv (krever et «app-passord»).
-// Sett disse på Render: GMAIL_USER og GMAIL_APP_PASSWORD.
-const CONTACT_TO = 'johnsenanahi@gmail.com';
-const mailer = process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD
-  ? nodemailer.createTransport({
-      service: 'gmail',
-      auth: { user: process.env.GMAIL_USER, pass: process.env.GMAIL_APP_PASSWORD },
-    })
-  : null;
+// Meldinger sendes videre via Formspree («broen»), som leverer dem til johnsenanahi@gmail.com.
+// Koden er ikke hemmelig (den sier bare hvor meldingen skal), så den kan stå her.
+const FORMSPREE_ID = process.env.FORMSPREE_ID || 'mjywppyv';
 
 // Enkel sperre: maks 5 meldinger per time fra samme adresse
 const recentSends = new Map();
@@ -99,26 +92,26 @@ app.post('/api/contact', async (req, res) => {
   if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return reply(false);
   if (tooMany(req.ip)) return reply(false, 429);
 
-  const mail = {
-    from: `Nettsiden anna-i.no <${process.env.GMAIL_USER || CONTACT_TO}>`,
-    to: CONTACT_TO,
-    replyTo: { name, address: email }, // «Svar» i Gmail går rett til avsenderen
-    subject: `Ny melding fra nettsiden: ${name.replace(/[\r\n]+/g, ' ')}`,
-    text: `Navn: ${name}\nE-post: ${email}\nSpråk: ${lang}\n\n${message}`,
-  };
+  const subject = `Ny melding fra nettsiden: ${name.replace(/[\r\n]+/g, ' ')}`;
 
-  if (!mailer) {
-    // Lokalt uten app-passord: skriv meldingen i terminalen i stedet for å sende den
+  if (!FORMSPREE_ID) {
+    // Lokalt uten Formspree: skriv meldingen i terminalen i stedet for å sende den
     if (process.env.NODE_ENV === 'production') {
-      console.error('Kontaktskjema: GMAIL_USER / GMAIL_APP_PASSWORD mangler');
+      console.error('Kontaktskjema: FORMSPREE_ID mangler');
       return reply(false, 500);
     }
-    console.log('\n--- Kontaktskjema (ikke sendt, mangler app-passord) ---\n' + mail.text + '\n');
+    console.log(`\n--- Kontaktskjema (ikke sendt, mangler FORMSPREE_ID) ---\n${subject}\nNavn: ${name}\nE-post: ${email}\nSpråk: ${lang}\n\n${message}\n`);
     return reply(true);
   }
 
   try {
-    await mailer.sendMail(mail);
+    const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      // «email» blir automatisk svar-adressen, så «Svar» i Gmail går rett til avsenderen
+      body: JSON.stringify({ name, email, message, språk: lang, _subject: subject }),
+    });
+    if (!response.ok) throw new Error(`Formspree svarte ${response.status}`);
     reply(true);
   } catch (err) {
     console.error('Kontaktskjema: kunne ikke sende', err.message);
