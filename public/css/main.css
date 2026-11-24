@@ -39,6 +39,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: right 100%; /* blomstene til høyre og litt høyere opp bak teksten */
   z-index: 0;
 }
 
@@ -546,11 +547,12 @@ footer {
 /* ---------- Kort intro på forsiden ---------- */
 /* Sentrert, som en undertekst i Bodoni kursiv */
 .home-intro {
-  padding: 7rem clamp(1rem, 8vw, 8rem) 4rem;
+  padding: 7rem clamp(1rem, 8vw, 8rem) 1rem;
   text-align: center;
 }
 
-.home-intro p {
+/* Første avsnitt: stort, i Bodoni kursiv */
+.home-intro .intro-lead {
   max-width: 56rem;
   margin: 0 auto;
   font-family: var(--display);
@@ -560,6 +562,63 @@ footer {
   line-height: 1.5;
   color: var(--text);
 }
+
+/* Avsnitt 2 og 3: vanlig tekst, sentrert, nesten like bredt som første avsnitt */
+.intro-body {
+  max-width: 50rem;
+  margin: 2.5rem auto 0;
+}
+
+.intro-body p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(239, 233, 225, 0.8);
+}
+
+.intro-body p + p { margin-top: 1.25rem; }
+
+/* Legenden: ceibo-blomsten som mørk bakgrunn bak teksten */
+.home-legend {
+  position: relative;
+  overflow: hidden;
+  min-height: 30rem;          /* høyere, så mer av blomsten synes */
+  padding: 1.75rem clamp(1rem, 8vw, 8rem) 7rem; /* teksten følger rett etter avsnitt 2 */
+  text-align: center;
+}
+
+.legend-bg {
+  position: absolute;
+  top: -12%;      /* løftet litt opp, så blomsten ligger høyere bak teksten */
+  left: 0;
+  width: 100%;
+  height: 112%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Mørk tone over blomsten (diskret), og myk overgang til svart øverst og nederst */
+.home-legend::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, var(--bg) 0%, rgba(11, 10, 9, 0) 15%, rgba(11, 10, 9, 0) 75%, var(--bg) 100%),
+    rgba(11, 10, 9, 0.76); /* dempet, så blomsten ligger diskret i bakgrunnen */
+}
+
+.home-legend p {
+  position: relative;
+  z-index: 2;
+  max-width: 50rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  text-shadow: 0 1px 12px rgba(11, 10, 9, 0.8); /* ekstra lesbarhet oppå bildet */
+}
+
+.home-more { position: relative; z-index: 2; text-align: center; margin-top: 2rem; } /* rett etter avsnitt 3 */
 
 /* «Under arbeid» og e-post nederst, sentrert */
 .home-contact {
@@ -589,7 +648,8 @@ footer {
 .more-link:hover { color: var(--pink); }
 
 @media (max-width: 760px) {
-  .home-intro { padding: 0.5rem clamp(1rem, 8vw, 8rem) 3rem; }
+  .home-intro { padding: 0.5rem clamp(1rem, 8vw, 8rem) 1rem; }
+  .home-legend { min-height: 0; padding: 1.25rem clamp(1rem, 8vw, 8rem) 6rem; }
 }
 
 /* ---------- Kontakt-siden ---------- */

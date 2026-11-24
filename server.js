@@ -58,6 +58,10 @@ for (const lang of Object.keys(locales)) {
 }
 app.get('/no', (req, res) => res.redirect(301, '/no/'));
 app.get('/es', (req, res) => res.redirect(301, '/es/'));
+// «Showreel» heter nå «Videoer» – gamle adresser sendes videre
+app.get('/showreel', (req, res) => res.redirect(301, url('en', 'videos')));
+app.get('/no/showreel', (req, res) => res.redirect(301, url('no', 'videos')));
+app.get('/es/showreel', (req, res) => res.redirect(301, url('es', 'videos')));
 // Gamle engelske adresser peker nå til forsiden
 app.get(['/en', '/en/'], (req, res) => res.redirect(301, '/'));
 

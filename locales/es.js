@@ -9,14 +9,18 @@ module.exports = {
   tagline: 'Raíces flamencas, visión contemporánea',
   roles: ['Bailaora', 'Coreógrafa', 'Artista visual', 'Pedagoga'],
   // Kort intro på forsiden, med lenke til Om-siden
-  intro: 'De la escena rave en Noruega a los estudios de flamenco de Sevilla. Anahí es bailaora, coreógrafa, artista visual y pedagoga noruego-chilena, con más de 20 años en el flamenco, un arte que honra por su tradición y explora con mirada contemporánea.',
+  intro: 'Anahí lleva Noruega y Chile en un mismo cuerpo. Pero el idioma más fuerte que habla es el flamenco, aunque no el único.',
+  introBody: [
+    'Hoy trabaja en la intersección entre el flamenco, la danza contemporánea, la música folclórica y la electrónica: una práctica arraigada en el lenguaje formal de la tradición, pero impulsada por una curiosidad constante por cruzar géneros y buscar nuevas formas de expresión.',
+    'Anahí ve belleza donde las cosas chocan, y su nombre lleva justamente una historia así. Proviene de una leyenda del pueblo guaraní de Sudamérica: una joven, capturada por los colonizadores españoles, fue quemada atada a un árbol. A la mañana siguiente, el árbol estaba cubierto de flores rojo fuego: el ceibo. Hoy otra Anahí baila flamenco, un arte creado por los gitanos de Andalucía, un pueblo sin poder, antes de que España lo convirtiera en su símbolo nacional. Anahí lleva ambas historias consigo: en su nombre y en su baile.',
+  ],
   introMore: 'Más sobre Anahí',
   soon: 'Página web en construcción…',
   // Sidene i menyen: adresse (slug) og navn
   pages: {
     home: { slug: '', label: 'Inicio' },
     about: { slug: 'sobre-mi', label: 'Sobre mí' },
-    showreel: { slug: 'showreel', label: 'Showreel' },
+    videos: { slug: 'videos', label: 'Vídeos' },
     gallery: { slug: 'galeria', label: 'Galería' },
     contact: { slug: 'contacto', label: 'Contacto' },
   },

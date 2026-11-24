@@ -9,14 +9,18 @@ module.exports = {
   tagline: 'Flamenco roots, contemporary vision',
   roles: ['Dancer', 'Choreographer', 'Visual artist', 'Teacher'],
   // Kort intro på forsiden, med lenke til Om-siden
-  intro: 'From the rave scene in Norway to the flamenco studios of Seville. Anahí is a Norwegian-Chilean dancer, choreographer, visual artist and teacher with more than 20 years in flamenco – an art form she honours for its tradition and explores with a contemporary eye.',
+  intro: 'Anahí carries Norway and Chile in the same body. But the strongest language she speaks is flamenco – though not the only one.',
+  introBody: [
+    'Today she works at the intersection of flamenco, contemporary dance, folk and electronic music – a practice rooted in the formal language of tradition, yet driven by an enduring curiosity for crossing genres and finding new forms of expression.',
+    'Anahí sees beauty where things collide – and her name carries just such a story. It comes from a legend of the Guaraní people of South America: a young woman, captured by Spanish colonisers, was burned, tied to a tree. The next morning the tree was covered in fire-red flowers – the ceibo. Today another Anahí dances flamenco, an art form created by the gitanos, the Roma people of Andalusia, a people without power, before Spain made it its national symbol. Anahí carries both stories with her – in her name and in her dance.',
+  ],
   introMore: 'More about Anahí',
   soon: 'Website under construction…',
   // Sidene i menyen: adresse (slug) og navn
   pages: {
     home: { slug: '', label: 'Home' },
     about: { slug: 'about', label: 'About' },
-    showreel: { slug: 'showreel', label: 'Showreel' },
+    videos: { slug: 'videos', label: 'Videos' },
     gallery: { slug: 'gallery', label: 'Gallery' },
     contact: { slug: 'contact', label: 'Contact' },
   },

@@ -25,9 +25,22 @@
   </main>
 
   <section class="home-intro">
-    <p><%= t.intro %></p>
-    <a class="more-link" href="<%= url(t.lang, 'about') %>"><%= t.introMore %> <span aria-hidden="true">→</span></a>
+    <p class="intro-lead"><%= t.intro %></p>
+    <div class="intro-body">
+      <p><%= t.introBody[0] %></p>
+    </div>
   </section>
+
+  <!-- Legenden om Anahí og ceibo-blomsten, med blomsten som bakgrunn -->
+  <section class="home-legend">
+    <img class="legend-bg" src="/img/ceibo-2000.jpg" srcset="/img/ceibo-1000.jpg 1000w, /img/ceibo-2000.jpg 2000w"
+         sizes="100vw" alt="" loading="lazy">
+    <p><%= t.introBody[1] %></p>
+    <div class="home-more">
+      <a class="more-link" href="<%= url(t.lang, 'about') %>"><%= t.introMore %> <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
 
   <section class="home-contact">
     <p class="soon"><%= t.soon %></p>
