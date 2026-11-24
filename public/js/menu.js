@@ -27,3 +27,18 @@
     }
   });
 })();
+
+// Språkmenyen: lukk den når man klikker et annet sted eller trykker Esc
+(function () {
+  const lang = document.querySelector('.lang');
+  if (!lang) return;
+  document.addEventListener('click', function (e) {
+    if (lang.open && !lang.contains(e.target)) lang.open = false;
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lang.open) {
+      lang.open = false;
+      lang.querySelector('summary').focus();
+    }
+  });
+})();
