@@ -23,7 +23,7 @@ module.exports = {
         heading: 'Røtter',
         paragraphs: [
           'Anahí er født og oppvokst i Norge, med far fra en liten kystby som heter Kragerø og mor som kom fra Chile som politisk flyktning. Hun begynte på ballett som seksåring, men den ekte dansegleden ble formet på house- og ravescenen i Norge på slutten av 1990-tallet – en lidenskap som senere, utrolig nok, ledet til flamenco.',
-          'Som 20-åring flyttet hun til Chile for å finne tilbake til sine chilenske røtter, og der fant hun flamencoen. Det som først trakk henne mot flamencoen, var fotarbeidet. Perkussivt, hypnotisk, nesten rituelt. Hun kjente det igjen fra dansegulvet, ikke fra danseskolen. Sangen, tradisjonen og dybden i det hele kom senere. Flamenco ble en besettelse.',
+          'Som 20-åring flyttet hun til Chile for å finne tilbake til sine chilenske røtter, og der tok kusinen hennes henne med på hennes første flamencoklasse. Det var kjærlighet ved første blikk. Fotarbeidet var perkussivt, hypnotisk, nesten rituelt. Hun kjente det igjen fra dansegulvet, ikke fra danseskolen. Sangen, tradisjonen og dybden i det hele kom senere. Flamenco ble en besettelse.',
           'Hun har aldri følt seg helt hjemme i én kategori, verken helt norsk eller helt chilensk, og i starten heller ingen typisk flamenca. Hun kom rett fra goth- og ravescenen med kort, svart hår og piercinger, og den blomstrete flamencokjolen føltes som et kostyme som tilhørte noen andre. Likevel dro hun til Sevilla, og studerte intensivt hos noen av Spanias fremste flamencodansere. Det som hadde føltes fremmed, ble selve fundamentet. Mer enn 20 år senere er flamenco hennes kunstneriske morsmål, språket hun tenker på, slik en forfatter tenker på morsmålet sitt.',
         ],
       },
@@ -38,7 +38,7 @@ module.exports = {
       {
         heading: 'Dans og film',
         paragraphs: [
-          'Anahí er like mye filmskaper som danser. Hun har en bachelor i audiovisuell kommunikasjon fra Duoc UC i Chile, og har gjennom hele karrieren regissert og klippet dokumentarfilmer, musikk- og dansevideoer. Kameraet og scenen har aldri vært atskilt for henne – det filmiske blikket former hvordan hun tenker koreografi.',
+          'Anahí er like mye filmskaper som danser. Hun har en bachelor i audiovisuell kommunikasjon fra Duoc UC i Chile, og har gjennom hele karrieren regissert og klippet dokumentarfilmer, musikk- og dansevideoer. Dokumentaren <em>Ovas de Oro</em>, der hun var medregissør og klipper, vant Gran Premio «Cora Coralina» for beste film ved FICA – Festival Internacional de Cinema e Vídeo Ambiental i Brasil, og beste dokumentar ved Festival Internacional de Cine de Valparaíso i Chile, begge i 2006. <em>Los Blue Splendor</em>, som hun filmet og klippet, vant beste nasjonale dokumentar ved In-Edit Chile, en internasjonal festival for musikkdokumentarer, i 2008. Kameraet og scenen har aldri vært atskilt for henne – det filmiske blikket former hvordan hun tenker koreografi.',
         ],
       },
       {
@@ -59,7 +59,7 @@ module.exports = {
         heading: 'Roots',
         paragraphs: [
           'Anahí was born and raised in Norway, to a father from a small coastal town called Kragerø and a mother who came from Chile as a political refugee. She started ballet at the age of six, but her true joy of dancing was shaped on the house and rave scene in Norway in the late 1990s – a passion that, unlikely as it may sound, later led to flamenco.',
-          'At 20, she moved to Chile to reconnect with her Chilean roots, and there she found flamenco. What first drew her to flamenco was the footwork. Percussive, hypnotic, almost ritualistic. She recognised it from dancefloors, not dance schools. The singing, the tradition and the depth of it all came later. Flamenco became an obsession.',
+          'At 20, she moved to Chile to reconnect with her Chilean roots, and there her cousin took her to her first flamenco class. It was love at first sight. The footwork was percussive, hypnotic, almost ritualistic. She recognised it from dancefloors, not dance schools. The singing, the tradition and the depth of it all came later. Flamenco became an obsession.',
           'She has never felt fully at home in any single category, neither entirely Norwegian nor entirely Chilean, and not, at first, a typical flamenca either. She arrived straight from the goth-rave scene, short black hair and piercings, the floral flamenco dress feeling like someone else’s costume. She went to Seville anyway, and studied intensively with some of Spain’s leading flamenco dancers. What had felt foreign became fundamental. More than 20 years later, flamenco is her artistic mother tongue, the language she thinks in, the way a writer thinks in their native language.',
         ],
       },
@@ -74,7 +74,7 @@ module.exports = {
       {
         heading: 'Dance and film',
         paragraphs: [
-          'Anahí is as much a filmmaker as a dancer. She holds a bachelor’s degree in audiovisual communication from Duoc UC in Chile, and throughout her career she has directed and edited documentaries, music videos and dance videos. The camera and the stage have never been separate for her – the cinematic eye shapes how she thinks about choreography.',
+          'Anahí is as much a filmmaker as a dancer. She holds a bachelor’s degree in audiovisual communication from Duoc UC in Chile, and throughout her career she has directed and edited documentaries, music videos and dance videos. The documentary <em>Ovas de Oro</em>, which she co-directed and edited, won the Grand Prize «Cora Coralina» for Best Film at FICA – the International Environmental Film and Video Festival in Brazil – and Best Documentary at the Valparaíso International Film Festival in Chile, both in 2006. <em>Los Blue Splendor</em>, which she shot and edited, won Best National Documentary at In-Edit Chile, an international music documentary festival, in 2008. The camera and the stage have never been separate for her – the cinematic eye shapes how she thinks about choreography.',
         ],
       },
       {
@@ -95,7 +95,7 @@ module.exports = {
         heading: 'Raíces',
         paragraphs: [
           'Anahí nació y creció en Noruega, hija de un padre de un pequeño pueblo costero llamado Kragerø y de una madre que llegó desde Chile como refugiada política. Empezó con el ballet a los seis años, pero la verdadera alegría de bailar nació en la escena house y rave de Noruega a finales de los años 90, una pasión que, por increíble que parezca, más tarde la llevó al flamenco.',
-          'A los 20 años se mudó a Chile para reencontrarse con sus raíces chilenas, y allí encontró el flamenco. Lo primero que la atrajo fue el zapateado. Percusivo, hipnótico, casi ritual. Lo reconoció de las pistas de baile, no de las academias de danza. El cante, la tradición y toda su profundidad llegaron después. El flamenco se convirtió en una obsesión.',
+          'A los 20 años se mudó a Chile para reencontrarse con sus raíces chilenas, y allí su prima la llevó a su primera clase de flamenco. Fue amor a primera vista. El zapateado era percusivo, hipnótico, casi ritual. Lo reconoció de las pistas de baile, no de las academias de danza. El cante, la tradición y toda su profundidad llegaron después. El flamenco se convirtió en una obsesión.',
           'Nunca se ha sentido del todo en casa en una sola categoría: ni del todo noruega ni del todo chilena, y al principio tampoco una flamenca típica. Llegaba directamente de la escena gótica y rave, con el pelo corto y negro y piercings, y el vestido de flores le parecía el disfraz de otra persona. Aun así, se fue a Sevilla y estudió de forma intensiva con algunos de los bailaores más destacados de España. Lo que le había parecido ajeno se volvió esencial. Más de 20 años después, el flamenco es su lengua materna artística: el idioma en el que piensa, como un escritor piensa en su lengua natal.',
         ],
       },
@@ -110,7 +110,7 @@ module.exports = {
       {
         heading: 'Danza y cine',
         paragraphs: [
-          'Anahí es tan cineasta como bailaora. Tiene un Bachelor en Comunicación Audiovisual de Duoc UC, Chile, y a lo largo de su trayectoria ha dirigido y montado documentales, videos musicales y de danza. Para ella, la cámara y el escenario nunca han estado separados: la mirada cinematográfica da forma a su manera de pensar la coreografía.',
+          'Anahí es tan cineasta como bailaora. Tiene un Bachelor en Comunicación Audiovisual de Duoc UC, Chile, y a lo largo de su trayectoria ha dirigido y montado documentales, videos musicales y de danza. El documental <em>Ovas de Oro</em>, en el que fue codirectora y montajista, ganó el Gran Premio «Cora Coralina» a Mejor Película en el Festival Internacional de Cine y Video Ambiental (FICA) de Brasil y el premio a Mejor Documental en el Festival Internacional de Cine de Valparaíso, ambos en 2006. <em>Los Blue Splendor</em>, que filmó y montó, ganó el premio a Mejor Documental Nacional en In-Edit Chile 2008, festival internacional de cine documental musical. Para ella, la cámara y el escenario nunca han estado separados: la mirada cinematográfica da forma a su manera de pensar la coreografía.',
         ],
       },
       {

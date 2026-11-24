@@ -465,14 +465,14 @@ footer {
   padding-top: 3.5rem;     /* samme avstand som mellom de andre seksjonene */
 }
 
-/* Samme bredde og marger som teksten over */
+/* Samme bredde og marger som teksten over (marg regnes med i bredden, så den aldri går utenfor skjermen) */
 .outro-inner {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 60rem;
+  max-width: calc(60rem + 2 * clamp(1rem, 8vw, 8rem));
   padding: 0 clamp(1rem, 8vw, 8rem);
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 .outro-inner .about-section { margin-top: 0; }
@@ -517,13 +517,16 @@ footer {
 .outro-toggle:hover,
 .outro-toggle:focus-visible { color: var(--text); border-color: var(--text); }
 
-/* Smal skjerm: videoen i full bredde øverst, teksten under */
+/* Smal skjerm: «I dag»-teksten først, videoen i full bredde til slutt */
 @media (max-width: 900px) {
   .about-outro {
-    display: block;
+    display: flex;
+    flex-direction: column;
     min-height: 0;
-    padding: 2.5rem 0 0;
+    padding: 0;
   }
+
+  .outro-inner { order: -1; padding: 0.5rem clamp(1rem, 8vw, 8rem) 2.5rem; } /* teksten før videoen */
 
   .outro-video {
     position: static;
@@ -535,12 +538,10 @@ footer {
 
   .about-outro::after { display: none; }
 
-  .outro-inner { padding: 0.5rem clamp(1rem, 8vw, 8rem) 3rem; }
-
   /* Pause-knappen nede til høyre i videoen */
   .outro-toggle {
-    top: calc(56.25vw - 2.75rem);
-    bottom: auto;
+    top: auto;
+    bottom: 0.75rem;
   }
 }
 
