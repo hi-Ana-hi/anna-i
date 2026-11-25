@@ -11,6 +11,7 @@ const locales = {
 const content = {
   about: require('./content/about'),
   contact: require('./content/contact'),
+  videos: require('./content/videos'),
 };
 
 const app = express();

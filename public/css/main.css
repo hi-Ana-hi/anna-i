@@ -857,3 +857,79 @@ footer {
 @media (max-width: 760px) {
   .header-right { gap: 1.5rem; }
 }
+
+/* ---------- Videoer ---------- */
+.videos-page { max-width: 76rem; box-sizing: content-box; }
+
+.video-grid {
+  list-style: none;
+  padding: 0;
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
+  gap: 3rem 2.5rem;
+}
+
+.video-thumb,
+.video-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #000;
+}
+
+.video-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.6) brightness(0.8); /* dempet, som resten av siden */
+  transition: filter 0.4s ease;
+}
+
+.video-thumb:hover img,
+.video-thumb:focus-visible img { filter: none; }
+
+/* Enkel avspillingsknapp: tynn sirkel med trekant */
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: -2.25rem 0 0 -2.25rem;
+  border: 1px solid rgba(239, 233, 225, 0.8);
+  border-radius: 50%;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.play-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 0.65rem 0 0.65rem 1.1rem;
+  border-color: transparent transparent transparent var(--text);
+}
+
+.video-thumb:hover .play-icon,
+.video-thumb:focus-visible .play-icon { border-color: var(--pink); transform: scale(1.06); }
+
+.video-title {
+  margin-top: 1rem;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.video-note {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}

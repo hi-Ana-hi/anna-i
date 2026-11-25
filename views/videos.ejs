@@ -1,0 +1,29 @@
+<%- include('partials/head') %>
+  <script src="/js/videos.js" defer></script>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="page videos-page">
+    <h1><%= t.pages[page].label %></h1>
+    <p class="contact-lead"><%= c.lead %></p>
+
+    <ul class="video-grid">
+<% c.videos.forEach(function (v) { %>
+      <li class="video-card">
+        <!-- Bare et bilde til noen klikker – da lastes YouTube-spilleren (personvernvennlig) -->
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=<%= v.id %>" target="_blank" rel="noopener"
+           data-video-id="<%= v.id %>" aria-label="<%= c.play %>: <%= v.title %>">
+          <img src="/img/videos/yt-<%= v.id %>.jpg" width="1280" height="720" alt="" loading="lazy">
+          <span class="play-icon" aria-hidden="true"></span>
+        </a>
+        <h2 class="video-title"><%= v.title %></h2>
+<% if (v.note) { %>
+        <p class="video-note"><%= v.note %></p>
+<% } %>
+      </li>
+<% }) %>
+    </ul>
+  </main>
+  <footer>© <%= year %> Anahí Sucarrat Johnsen · Oslo</footer>
+</body>
+</html>
