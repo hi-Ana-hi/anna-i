@@ -1,44 +1,29 @@
-// Bakgrunnsvideo i hero: lastes og spilles bare når det passer for besøkende.
-// Ekstra robust for strenge nettlesere (f.eks. Instagrams innebygde nettleser).
+// Bakgrunnsvideo i hero.
+// Videoen har «autoplay» direkte i HTML-en (det mest robuste, også i Instagram og på mobil).
+// Dette skriptet legger bare til pause-/spill-knappen og respekterer «reduser bevegelse».
 (function () {
   const video = document.querySelector('.hero-video');
   const button = document.querySelector('.video-toggle');
   if (!video || !button) return;
 
-  // Strenge nettlesere godtar bare autoavspilling når videoen er tydelig lydløs og «inline»,
-  // satt både som egenskap i koden og som attributt – ikke bare i HTML-en
+  // Ekstra sikkerhet for strenge nettlesere: tydelig lydløs og «inline»
   video.muted = true;
   video.defaultMuted = true;
   video.playsInline = true;
-  video.setAttribute('muted', '');
-  video.setAttribute('playsinline', '');
-  video.setAttribute('webkit-playsinline', '');
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-  // Henter filen først når vi faktisk skal spille (sparer data ved redusert bevegelse)
-  function load() {
-    if (!video.getAttribute('src')) {
-      video.src = video.dataset.src;
-      video.load();
-    }
-  }
-
-  // fromClick = true når besøkende selv trykket «Spill av»
-  function play(fromClick) {
-    load();
-    const attempt = video.play();
-    if (attempt && attempt.catch) {
-      attempt.catch(function () {
-        // Avvist (f.eks. strømsparing eller Instagram): vis videoens egne kontroller som plan B
-        if (fromClick) video.controls = true;
-        updateLabel();
-      });
-    }
-  }
 
   function updateLabel() {
     button.textContent = video.paused ? button.dataset.labelPlay : button.dataset.labelPause;
+  }
+
+  function play() {
+    const attempt = video.play();
+    if (attempt && attempt.catch) {
+      attempt.catch(function () {
+        // Fortsatt avvist (f.eks. strømsparing): vis videoens egne kontroller som plan B
+        video.controls = true;
+        updateLabel();
+      });
+    }
   }
 
   video.addEventListener('play', updateLabel);
@@ -46,17 +31,17 @@
   video.addEventListener('playing', function () { video.controls = false; });
 
   button.addEventListener('click', function () {
-    if (video.paused) play(true);
+    if (video.paused) play();
     else video.pause();
   });
 
-  // Knappen vises bare når JavaScript kjører (uten JS ville den ikke virket)
+  // Knappen vises bare når JavaScript kjører
   button.hidden = false;
-
-  if (!reduceMotion.matches) play(false);
   updateLabel();
 
-  // Hvis noen slår på «reduser bevegelse» mens siden er åpen (eldre nettlesere støtter ikke dette)
+  // «Reduser bevegelse» slått på: stopp videoen
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reduceMotion.matches) video.pause();
   if (reduceMotion.addEventListener) {
     reduceMotion.addEventListener('change', function (e) {
       if (e.matches) video.pause();
